@@ -1,0 +1,23 @@
+<div class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">New Planet</h1>
+        <h3 class="subtitle">Fill the fields below to add a new planet!</h3>
+      </div>
+    </div>
+</div>
+
+<section class="section">
+
+	<div class="columns">
+		<div class="column is-6 is-offset-3">
+			<%= render 'form', planet: @planet %>
+
+   			<%= link_to 'Back', planets_path, class: "button", style: "margin-top: 20px;" %>
+		</div>
+	</div>
+	
+</section>
+
+
+

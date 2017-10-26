@@ -1,0 +1,22 @@
+<header class="hero is-info">
+	<div class="hero-body">
+		<div class="container">
+			<h1 class="title">Editing Alien</h1>
+			<h4 class="subtitle">Change the fields below in order to change <strong><%= @alien.name %></strong> data</h4>
+		</div>
+	</div>
+</header>
+<section class="section">
+	<div class="columns">
+		<div class="column is-6 is-offset-3">
+
+			<%= render 'form', alien: @alien %>
+
+			<div class="buttons" style="margin-top: 20px;">
+				<%= link_to 'Show', @alien, class: "button is-info" %>
+				<%= link_to 'Back', aliens_path, class: "button" %>
+			</div>
+
+		</div>
+	</div>
+</section>

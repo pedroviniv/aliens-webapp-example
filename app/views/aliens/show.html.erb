@@ -1,0 +1,40 @@
+<header class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Aliens</h1>
+        <h3 class="subtitle">Informations about <strong><%= @alien.name %></strong></h3>
+      </div>
+    </div>
+</header>
+<section class="section">
+
+	<div class="container">
+
+		<% if notice %>
+	        <article class="message is-primary">
+	            <div id="notice" class="message-body">
+	              <%= notice %>
+	            </div>
+	        </article>
+	    <% end %>
+
+		<p>
+		  <strong>Name:</strong>
+		  <%= @alien.name %>
+		</p>
+
+		<p>
+		  <strong>Age:</strong>
+		  <%= @alien.age %>
+		</p>
+
+		<div class="buttons" style="margin-top: 20px;">
+			<%= link_to 'Edit', edit_alien_path(@alien), class: "button is-info" %>
+			<%= link_to 'Back', aliens_path, class: "button" %>
+		</div>
+
+	</div>
+
+</section>
+
+

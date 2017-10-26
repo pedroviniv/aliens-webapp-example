@@ -1,0 +1,59 @@
+<div class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Aliens</h1>
+        <h3 class="subtitle">Manager your aliens</h3>
+      </div>
+    </div>
+</div>
+<div class="section">
+  <div class="columns">
+    
+  <div class="column is-8 is-offset-2">
+
+    <% if notice %>
+      <article class="message is-primary">
+        <div id="notice" class="message-body">
+          <%= notice %>
+        </div>
+      </article>
+    <% end %>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Planet</th>
+          <th>Created at</th>
+          <th>Last Update</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @aliens.each do |alien| %>
+          <tr>
+            <td><%= alien.name %></td>
+            <td><%= alien.age %></td>
+            <td><%= alien.planet.name %></td>
+            <td><%= alien.created_at.strftime("%d/%m/%y %H:%M:%S") %></td>
+            <td><%= alien.updated_at.strftime("%d/%m/%y %H:%M:%S") %></td>
+            <td><%= link_to 'Show', alien, class: "button is-primary" %></td>
+            <td><%= link_to 'Edit', edit_alien_path(alien), class: "button is-info" %></td>
+            <td><%= link_to 'Destroy', alien, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to 'New Alien', new_alien_path, class: "button is-success" %>
+  </div>
+
+
+  </div>
+</div>
+
+<br>
+
+

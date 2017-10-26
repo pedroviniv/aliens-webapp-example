@@ -1,0 +1,19 @@
+<header class="hero is-info">
+	<div class="hero-body">
+		<div class="container">
+			<h1 class="title">New Alien</h1>
+			<h4 class="subtitle">Fill the fields below to add a new alien!</h4>
+		</div>
+	</div>
+</header>
+<section class="section">
+
+<div class="columns">
+	<div class="column is-6 is-offset-3">
+		<%= render 'form', alien: @alien %>
+
+		<%= link_to 'Back', aliens_path, class: "button", style: "margin-top: 30px;" %>
+	</div>
+</div>
+
+</section>

@@ -1,0 +1,28 @@
+<div class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Editing Planet</h1>
+        <h4 class="subtitle">
+        	Change the fields below to change data about 
+          <strong><%= @planet.name %></strong>
+        </h4>
+      </div>
+    </div>
+</div>
+<section class="section">
+  <div class="container">
+  	<div class="columns">
+
+      <div class="column is-6 is-offset-3">
+    		<%= render 'form', planet: @planet %>
+
+    		<div class="buttons" style="margin-top: 20px;">
+    			<%= link_to 'Show', @planet, class: "button is-info is-outlined" %>
+    			<%= link_to 'Back', planets_path, class: "button is-outlined" %>
+    		</div>
+      </div>
+  	</div>
+  </div>
+</section>
+
+

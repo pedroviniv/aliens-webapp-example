@@ -1,0 +1,35 @@
+<%= form_with(model: alien, local: true) do |form| %>
+  <% if alien.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(alien.errors.count, "error") %> prohibited this alien from being saved:</h2>
+
+      <ul>
+      <% alien.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+      <div class="field">
+        <%= form.label :planet %><br>
+        <div class="select">
+          <%= collection_select(:alien, :planet_id, Planet.all, :id, :name) %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :alien_name, class: "input", placeholder: "Spock" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :age %>
+        <%= form.number_field :age, id: :alien_age, class: "input", placeholder: "35" %>
+      </div>
+
+      <div class="actions">
+        <button class="button is-primary block" type="submit">Submit</button>
+      </div>
+      
+<% end %>
